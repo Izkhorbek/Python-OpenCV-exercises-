@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-path = 'D:\Python\PyCharm\Color Detection\Hveloster.jpg'
+path = 'Hveloster.jpg'
 
 def empty(a):
     pass
