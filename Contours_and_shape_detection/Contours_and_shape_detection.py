@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
-
+import wget
+wget.download("https://github.com/Izkhorbek/Python-OpenCV-exercises-/blob/main/Contours_and_shape_detection/basic_shapes.png")
 path = 'basic_shapes.png'
 img = cv2.imread(path)
 img = cv2.resize(img,(img.shape[1]//2, img.shape[0]//2 ))
