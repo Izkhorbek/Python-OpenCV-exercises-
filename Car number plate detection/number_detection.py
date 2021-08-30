@@ -1,12 +1,14 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("russian_car/russian_car.jpg")
+img = cv2.imread("russian_car/image_2.jpg")
 russian_car = img.copy()
 Plate_num_Cascade = cv2.CascadeClassifier("haarcascade_russian_plate_number.xml")
 minArea = 500
 color = (15, 255, 0)
+
 def find_plate(img):
+    count = 0
     imgGRAY = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     numberPlate = Plate_num_Cascade.detectMultiScale(imgGRAY,1.1,4)
     for (x,y,w,h) in numberPlate:
@@ -18,7 +20,7 @@ def find_plate(img):
             cv2.imshow("Result",imgRoi)
             cv2.imshow("Image",img)
             cv2.waitKey(0)
-
-    cv2.imwrite("scanned/rasm_"+str(1)+".jpg",imgRoi)
+            cv2.imwrite("scanned/rasm_" + str(count) + ".jpg", imgRoi)
+            count=+1
 
 find_plate(russian_car)
